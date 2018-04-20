@@ -67,6 +67,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Rokey-Smooth-Metal-Hard-driver-shared-connect.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
@@ -142,6 +145,12 @@
       <Project>{affd9077-e9dc-468f-bb98-ff4a33214119}</Project>
       <Name>ConnectionDatabase.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rokey-Smooth-Metal-Hard-driver-shared-connect.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Rokey-Smooth-Metal-Hard-driver-shared-connect.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
