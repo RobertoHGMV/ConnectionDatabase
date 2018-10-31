@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using ConnectionDatabase.Domain.Enums;
 using ConnectionDatabase.Domain.Models;
 using ConnectionDatabase.Domain.Services;
 
@@ -34,13 +35,13 @@ namespace ConnectionDatabase.UI
         {
             var serverTypes = new[]
             {
-                new { Id = 1, Description = "MySql" },
-                new { Id = 4, Description = "Sql Server 2005" },
-                new { Id = 6, Description = "Sql Server 2008" },
-                new { Id = 7, Description = "Sql Server 2012" },
-                new { Id = 8, Description = "Sql Server 2014" },
-                new { Id = 10, Description = "Sql Server 2016" },
-                new { Id = 9, Description = "Hana" }
+                new { Id = (int)EServerType.MySql, Description = "MySql" },
+                new { Id = (int)EServerType.Sql_Server_2005, Description = "Sql Server 2005" },
+                new { Id = (int)EServerType.Sql_Server_2008, Description = "Sql Server 2008" },
+                new { Id = (int)EServerType.Sql_Server_2012, Description = "Sql Server 2012" },
+                new { Id = (int)EServerType.Sql_Server_2014, Description = "Sql Server 2014" },
+                new { Id = (int)EServerType.Sql_Server_2016, Description = "Sql Server 2016" },
+                new { Id = (int)EServerType.Hana, Description = "Hana" }
             };
 
             cbServerType.DropDownStyle = ComboBoxStyle.DropDownList;

@@ -1,6 +1,8 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
+using ConnectionDatabase.Domain.Enums;
 using ConnectionDatabase.Domain.Models;
+using Sap.Data.Hana;
 using SAPbobsCOM;
 
 namespace ConnectionDatabase.Domain.Services
@@ -11,13 +13,43 @@ namespace ConnectionDatabase.Domain.Services
 
         public bool IsConnectedDatabase(Settings settings)
         {
+            switch ((EServerType)settings.ServerTypeSbo)
+            {
+                case EServerType.Hana:
+                    return IsConnectedHana(settings);
+                default:
+                    return IsConnectedSqlServer(settings);
+            }
+        }
+
+        private bool IsConnectedSqlServer(Settings settings)
+        {
+            bool connected;
+
             using (var conn = new SqlConnection())
             {
                 conn.ConnectionString = GetConnString(settings);
                 conn.Open();
-
-                return conn.State == ConnectionState.Open;
+                connected = conn.State == ConnectionState.Open;
+                conn.Close();
             }
+
+            return connected;
+        }
+
+        private bool IsConnectedHana(Settings settings)
+        {
+            bool connected;
+
+            using (var conn = new HanaConnection())
+            {
+                conn.ConnectionString = GetConnStringHana(settings);
+                conn.Open();
+                connected = conn.State == ConnectionState.Open;
+                conn.Close();
+            }
+
+            return connected;
         }
 
         public bool IsConnectedSbo(Settings settings)
@@ -47,10 +79,28 @@ namespace ConnectionDatabase.Domain.Services
 
         private string GetConnString(Settings settings)
         {
-            return $"Data Source={settings.Server};" +
-                   $"Initial Catalog={settings.Database};" +
-                   $"User id={settings.User};" +
-                   $"Password={settings.Password};";
+            var connStr = new SqlConnectionStringBuilder();
+            connStr.DataSource = settings.Server;
+            connStr.InitialCatalog = settings.Database;
+            connStr.UserID = settings.User;
+            connStr.Password = settings.Password;
+            return connStr.ToString();
+            //return $"Data Source={settings.Server};" +
+            //       $"Initial Catalog={settings.Database};" +
+            //       $"User id={settings.User};" +
+            //       $"Password={settings.Password};";
+        }
+
+        private string GetConnStringHana(Settings settings)
+        {
+            var connStr = new HanaConnectionStringBuilder();
+            connStr.DataSourceName = settings.Server;
+            connStr.Database = settings.Database;
+            connStr.UserName = settings.User;
+            connStr.Password = settings.Password;
+            return connStr.ToString();
+
+            //@"Server=hanab1:30015;Initial Catalog=SBODEMOBR;databaseName=NDB;UserID=system;Password=Ramo2278";
         }
 
         private void SetLastErrorSbo(Company company)
