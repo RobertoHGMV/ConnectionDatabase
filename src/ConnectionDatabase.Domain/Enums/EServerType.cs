@@ -7,7 +7,8 @@
         Sql_Server_2008 = 6,
         Sql_Server_2012 = 7,
         Sql_Server_2014 = 8,
+        Hana = 9,
         Sql_Server_2016 = 10,
-        Hana = 9
+        Sql_Server_2017 = 11
     }
 }

@@ -35,12 +35,13 @@ namespace ConnectionDatabase.UI
         {
             var serverTypes = new[]
             {
-                new { Id = (int)EServerType.MySql, Description = "MySql" },
+                //new { Id = (int)EServerType.MySql, Description = "MySql" },
                 new { Id = (int)EServerType.Sql_Server_2005, Description = "Sql Server 2005" },
                 new { Id = (int)EServerType.Sql_Server_2008, Description = "Sql Server 2008" },
                 new { Id = (int)EServerType.Sql_Server_2012, Description = "Sql Server 2012" },
                 new { Id = (int)EServerType.Sql_Server_2014, Description = "Sql Server 2014" },
                 new { Id = (int)EServerType.Sql_Server_2016, Description = "Sql Server 2016" },
+                new { Id = (int)EServerType.Sql_Server_2017, Description = "Sql Server 2017" },
                 new { Id = (int)EServerType.Hana, Description = "Hana" }
             };
 
