@@ -35,6 +35,7 @@ namespace ConnectionDatabase.UI
         {
             var serverTypes = new[]
             {
+                new { Id = (int)EServerType.None, Description = "Não definido" },
                 //new { Id = (int)EServerType.MySql, Description = "MySql" },
                 new { Id = (int)EServerType.Sql_Server_2005, Description = "Sql Server 2005" },
                 new { Id = (int)EServerType.Sql_Server_2008, Description = "Sql Server 2008" },
@@ -53,7 +54,8 @@ namespace ConnectionDatabase.UI
 
         private Settings CreateSettings()
         {
-            return new Settings(txtServer.Text, txtDatabase.Text, txtUser.Text, txtPassword.Text);
+            var serverType = (int)cbServerType.SelectedValue;
+            return new Settings(txtServer.Text, txtDatabase.Text, txtUser.Text, txtPassword.Text, serverType);
         }
 
         private Settings CreateSettingsSbo()
@@ -82,16 +84,21 @@ namespace ConnectionDatabase.UI
             return _connectionService.IsConnectedSbo(settings);
         }
 
+        private void BtnTestClick()
+        {
+            btnConTest.Enabled = false;
+
+            if (StartTest())
+                MessageSuccess();
+            else
+                MessageError("Conexão não realizada");
+        }
+
         private void btnConTest_Click(object sender, EventArgs e)
         {
             try
             {
-                btnConTest.Enabled = false;
-
-                if (StartTest())
-                    MessageSuccess();
-                else
-                    MessageError("Conexão não realizada");
+                BtnTestClick();
             }
             catch (Exception ex)
             {
@@ -103,15 +110,20 @@ namespace ConnectionDatabase.UI
             }
         }
 
+        private void BtnTestSboClick()
+        {
+            btnConnTestSbo.Enabled = false;
+            if (StarTestSbo())
+                MessageSuccess();
+            else
+                MessageError(_connectionService.LastErrorSbo);
+        }
+
         private void btnConnTestSbo_Click(object sender, EventArgs e)
         {
             try
             {
-                btnConnTestSbo.Enabled = false;
-                if (StarTestSbo())
-                    MessageSuccess();
-                else
-                    MessageError(_connectionService.LastErrorSbo);
+                BtnTestSboClick();
             }
             catch (Exception ex)
             {

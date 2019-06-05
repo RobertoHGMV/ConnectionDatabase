@@ -2,6 +2,7 @@
 {
     public enum EServerType
     {
+        None = 0,
         MySql = 1,
         Sql_Server_2005 = 4,
         Sql_Server_2008 = 6,

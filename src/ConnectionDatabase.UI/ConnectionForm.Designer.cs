@@ -42,14 +42,14 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.txtServer = new MetroFramework.Controls.MetroTextBox();
             this.tabPageConnSbo = new MetroFramework.Controls.MetroTabPage();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
-            this.cbServerType = new MetroFramework.Controls.MetroComboBox();
             this.btnOk = new MetroFramework.Controls.MetroButton();
             this.btnConnTestSbo = new MetroFramework.Controls.MetroButton();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.txtPasswordSbo = new MetroFramework.Controls.MetroTextBox();
             this.txtUserSbo = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.cbServerType = new MetroFramework.Controls.MetroComboBox();
             this.metroTabControl1.SuspendLayout();
             this.tabPageConnDatabase.SuspendLayout();
             this.tabPageConnSbo.SuspendLayout();
@@ -65,12 +65,14 @@
             this.metroTabControl1.Location = new System.Drawing.Point(2, 63);
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.SelectedIndex = 0;
-            this.metroTabControl1.Size = new System.Drawing.Size(497, 229);
+            this.metroTabControl1.Size = new System.Drawing.Size(497, 270);
             this.metroTabControl1.TabIndex = 0;
             this.metroTabControl1.UseSelectable = true;
             // 
             // tabPageConnDatabase
             // 
+            this.tabPageConnDatabase.Controls.Add(this.metroLabel7);
+            this.tabPageConnDatabase.Controls.Add(this.cbServerType);
             this.tabPageConnDatabase.Controls.Add(this.btnConTest);
             this.tabPageConnDatabase.Controls.Add(this.cmdOk);
             this.tabPageConnDatabase.Controls.Add(this.metroLabel4);
@@ -86,7 +88,7 @@
             this.tabPageConnDatabase.HorizontalScrollbarSize = 10;
             this.tabPageConnDatabase.Location = new System.Drawing.Point(4, 38);
             this.tabPageConnDatabase.Name = "tabPageConnDatabase";
-            this.tabPageConnDatabase.Size = new System.Drawing.Size(489, 187);
+            this.tabPageConnDatabase.Size = new System.Drawing.Size(489, 228);
             this.tabPageConnDatabase.TabIndex = 0;
             this.tabPageConnDatabase.Text = "Conexão - Banco";
             this.tabPageConnDatabase.VerticalScrollbarBarColor = true;
@@ -97,7 +99,7 @@
             // 
             this.btnConTest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConTest.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnConTest.Location = new System.Drawing.Point(339, 152);
+            this.btnConTest.Location = new System.Drawing.Point(339, 193);
             this.btnConTest.Name = "btnConTest";
             this.btnConTest.Size = new System.Drawing.Size(138, 23);
             this.btnConTest.TabIndex = 5;
@@ -109,7 +111,7 @@
             // 
             this.cmdOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cmdOk.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.cmdOk.Location = new System.Drawing.Point(11, 152);
+            this.cmdOk.Location = new System.Drawing.Point(11, 193);
             this.cmdOk.Name = "cmdOk";
             this.cmdOk.Size = new System.Drawing.Size(75, 23);
             this.cmdOk.TabIndex = 10;
@@ -129,7 +131,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(247, 74);
+            this.metroLabel3.Location = new System.Drawing.Point(247, 64);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(44, 19);
             this.metroLabel3.TabIndex = 8;
@@ -184,7 +186,7 @@
             this.txtPassword.CustomButton.UseSelectable = true;
             this.txtPassword.CustomButton.Visible = false;
             this.txtPassword.Lines = new string[0];
-            this.txtPassword.Location = new System.Drawing.Point(247, 96);
+            this.txtPassword.Location = new System.Drawing.Point(247, 86);
             this.txtPassword.MaxLength = 32767;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
@@ -214,7 +216,7 @@
             this.txtUser.CustomButton.UseSelectable = true;
             this.txtUser.CustomButton.Visible = false;
             this.txtUser.Lines = new string[0];
-            this.txtUser.Location = new System.Drawing.Point(11, 96);
+            this.txtUser.Location = new System.Drawing.Point(11, 86);
             this.txtUser.MaxLength = 32767;
             this.txtUser.Name = "txtUser";
             this.txtUser.PasswordChar = '\0';
@@ -232,7 +234,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(11, 74);
+            this.metroLabel2.Location = new System.Drawing.Point(11, 64);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(53, 19);
             this.metroLabel2.TabIndex = 4;
@@ -243,7 +245,7 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.Location = new System.Drawing.Point(11, 13);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(58, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(59, 19);
             this.metroLabel1.TabIndex = 3;
             this.metroLabel1.Text = "Servidor";
             // 
@@ -279,8 +281,6 @@
             // 
             // tabPageConnSbo
             // 
-            this.tabPageConnSbo.Controls.Add(this.metroLabel7);
-            this.tabPageConnSbo.Controls.Add(this.cbServerType);
             this.tabPageConnSbo.Controls.Add(this.btnOk);
             this.tabPageConnSbo.Controls.Add(this.btnConnTestSbo);
             this.tabPageConnSbo.Controls.Add(this.metroLabel5);
@@ -292,37 +292,18 @@
             this.tabPageConnSbo.HorizontalScrollbarSize = 10;
             this.tabPageConnSbo.Location = new System.Drawing.Point(4, 38);
             this.tabPageConnSbo.Name = "tabPageConnSbo";
-            this.tabPageConnSbo.Size = new System.Drawing.Size(489, 187);
+            this.tabPageConnSbo.Size = new System.Drawing.Size(489, 228);
             this.tabPageConnSbo.TabIndex = 1;
             this.tabPageConnSbo.Text = "Conexão - SAP";
             this.tabPageConnSbo.VerticalScrollbarBarColor = true;
             this.tabPageConnSbo.VerticalScrollbarHighlightOnWheel = false;
             this.tabPageConnSbo.VerticalScrollbarSize = 10;
             // 
-            // metroLabel7
-            // 
-            this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(11, 75);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(107, 19);
-            this.metroLabel7.TabIndex = 16;
-            this.metroLabel7.Text = "Tipo de Servidor";
-            // 
-            // cbServerType
-            // 
-            this.cbServerType.FormattingEnabled = true;
-            this.cbServerType.ItemHeight = 23;
-            this.cbServerType.Location = new System.Drawing.Point(11, 97);
-            this.cbServerType.Name = "cbServerType";
-            this.cbServerType.Size = new System.Drawing.Size(230, 29);
-            this.cbServerType.TabIndex = 8;
-            this.cbServerType.UseSelectable = true;
-            // 
             // btnOk
             // 
             this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnOk.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnOk.Location = new System.Drawing.Point(11, 153);
+            this.btnOk.Location = new System.Drawing.Point(20, 187);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
             this.btnOk.TabIndex = 11;
@@ -334,7 +315,7 @@
             // 
             this.btnConnTestSbo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConnTestSbo.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnConnTestSbo.Location = new System.Drawing.Point(339, 153);
+            this.btnConnTestSbo.Location = new System.Drawing.Point(348, 187);
             this.btnConnTestSbo.Name = "btnConnTestSbo";
             this.btnConnTestSbo.Size = new System.Drawing.Size(138, 23);
             this.btnConnTestSbo.TabIndex = 9;
@@ -422,11 +403,30 @@
             this.metroLabel6.TabIndex = 9;
             this.metroLabel6.Text = "Usuário";
             // 
+            // metroLabel7
+            // 
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.Location = new System.Drawing.Point(11, 115);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(108, 19);
+            this.metroLabel7.TabIndex = 18;
+            this.metroLabel7.Text = "Tipo de Servidor";
+            // 
+            // cbServerType
+            // 
+            this.cbServerType.FormattingEnabled = true;
+            this.cbServerType.ItemHeight = 23;
+            this.cbServerType.Location = new System.Drawing.Point(11, 137);
+            this.cbServerType.Name = "cbServerType";
+            this.cbServerType.Size = new System.Drawing.Size(230, 29);
+            this.cbServerType.TabIndex = 17;
+            this.cbServerType.UseSelectable = true;
+            // 
             // ConnectionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 293);
+            this.ClientSize = new System.Drawing.Size(500, 334);
             this.Controls.Add(this.metroTabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ConnectionForm";
@@ -461,8 +461,8 @@
         private MetroFramework.Controls.MetroTextBox txtPasswordSbo;
         private MetroFramework.Controls.MetroTextBox txtUserSbo;
         private MetroFramework.Controls.MetroLabel metroLabel6;
-        private MetroFramework.Controls.MetroComboBox cbServerType;
         private MetroFramework.Controls.MetroLabel metroLabel7;
+        private MetroFramework.Controls.MetroComboBox cbServerType;
     }
 }
 

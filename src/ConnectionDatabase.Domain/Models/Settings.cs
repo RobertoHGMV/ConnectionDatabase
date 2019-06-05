@@ -1,15 +1,17 @@
-﻿using System;
+﻿using ConnectionDatabase.Domain.Enums;
+using System;
 
 namespace ConnectionDatabase.Domain.Models
 {
     public class Settings
     {
-        public Settings(string server, string database, string user, string password)
+        public Settings(string server, string database, string user, string password, int serverTypeSbo)
         {
             Server = server;
             Database = database;
             User = user;
             Password = password;
+            ServerTypeSbo = serverTypeSbo;
 
             Validate();
         }
@@ -34,7 +36,12 @@ namespace ConnectionDatabase.Domain.Models
         public string Password { get; }
         public string UserSbo { get; }
         public string PasswordSbo { get; }
-        public int ServerTypeSbo { get; }
+        public int ServerTypeSbo { get; private set; }
+        public EServerType ServerTypeSboEnum
+        {
+            get { return (EServerType)ServerTypeSbo; }
+            set { ServerTypeSbo = (int)value; }
+        }
 
         private void Validate()
         {
@@ -49,6 +56,9 @@ namespace ConnectionDatabase.Domain.Models
 
             if (string.IsNullOrEmpty(Password))
                 throw new Exception("Senha não informada");
+
+            if (EServerType.None.Equals(ServerTypeSboEnum))
+                throw new Exception("Tipo de servidor não informado");
         }
 
         private void ValidateSbo()

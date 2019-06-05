@@ -30,7 +30,7 @@ namespace ConnectionDatabase.Domain.Services
             {
                 conn.ConnectionString = GetConnString(settings);
                 conn.Open();
-                connected = conn.State == ConnectionState.Open;
+                connected = ConnectionState.Open.Equals(conn.State);
                 conn.Close();
             }
 
@@ -45,7 +45,7 @@ namespace ConnectionDatabase.Domain.Services
             {
                 conn.ConnectionString = GetConnStringHana(settings);
                 conn.Open();
-                connected = conn.State == ConnectionState.Open;
+                connected = ConnectionState.Open.Equals(conn.State);
                 conn.Close();
             }
 
@@ -70,7 +70,7 @@ namespace ConnectionDatabase.Domain.Services
             company.language = BoSuppLangs.ln_Portuguese_Br;
             company.XmlExportType = BoXmlExportTypes.xet_ExportImportMode;
 
-            var connected = company.Connect() == 0;
+            var connected = decimal.Zero.Equals(company.Connect());
 
             if (!connected) SetLastErrorSbo(company);
 
