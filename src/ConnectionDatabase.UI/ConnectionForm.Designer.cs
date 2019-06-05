@@ -111,7 +111,7 @@
             this.cbServerType.Location = new System.Drawing.Point(11, 137);
             this.cbServerType.Name = "cbServerType";
             this.cbServerType.Size = new System.Drawing.Size(230, 29);
-            this.cbServerType.TabIndex = 17;
+            this.cbServerType.TabIndex = 5;
             this.cbServerType.UseSelectable = true;
             // 
             // btnConTest
@@ -121,7 +121,7 @@
             this.btnConTest.Location = new System.Drawing.Point(339, 193);
             this.btnConTest.Name = "btnConTest";
             this.btnConTest.Size = new System.Drawing.Size(138, 23);
-            this.btnConTest.TabIndex = 5;
+            this.btnConTest.TabIndex = 6;
             this.btnConTest.Text = "Testar Conexão";
             this.btnConTest.UseSelectable = true;
             this.btnConTest.Click += new System.EventHandler(this.btnConTest_Click);
@@ -133,7 +133,7 @@
             this.cmdOk.Location = new System.Drawing.Point(11, 193);
             this.cmdOk.Name = "cmdOk";
             this.cmdOk.Size = new System.Drawing.Size(75, 23);
-            this.cmdOk.TabIndex = 10;
+            this.cmdOk.TabIndex = 7;
             this.cmdOk.Text = "OK";
             this.cmdOk.UseSelectable = true;
             this.cmdOk.Click += new System.EventHandler(this.cmdOk_Click);
@@ -337,7 +337,7 @@
             this.btnConnTestSbo.Location = new System.Drawing.Point(339, 193);
             this.btnConnTestSbo.Name = "btnConnTestSbo";
             this.btnConnTestSbo.Size = new System.Drawing.Size(138, 23);
-            this.btnConnTestSbo.TabIndex = 9;
+            this.btnConnTestSbo.TabIndex = 10;
             this.btnConnTestSbo.Text = "Testar Conexão";
             this.btnConnTestSbo.UseSelectable = true;
             this.btnConnTestSbo.Click += new System.EventHandler(this.btnConnTestSbo_Click);
@@ -378,7 +378,7 @@
             this.txtPasswordSbo.SelectionStart = 0;
             this.txtPasswordSbo.ShortcutsEnabled = true;
             this.txtPasswordSbo.Size = new System.Drawing.Size(230, 23);
-            this.txtPasswordSbo.TabIndex = 7;
+            this.txtPasswordSbo.TabIndex = 9;
             this.txtPasswordSbo.UseSelectable = true;
             this.txtPasswordSbo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPasswordSbo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -408,7 +408,7 @@
             this.txtUserSbo.SelectionStart = 0;
             this.txtUserSbo.ShortcutsEnabled = true;
             this.txtUserSbo.Size = new System.Drawing.Size(230, 23);
-            this.txtUserSbo.TabIndex = 6;
+            this.txtUserSbo.TabIndex = 8;
             this.txtUserSbo.UseSelectable = true;
             this.txtUserSbo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtUserSbo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
