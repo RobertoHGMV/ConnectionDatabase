@@ -94,8 +94,8 @@ namespace ConnectionDatabase.Domain.Services
         private string GetConnStringHana(Settings settings)
         {
             var connStr = new HanaConnectionStringBuilder();
-            connStr.DataSourceName = settings.Server;
-            connStr.Database = settings.Database;
+            connStr.Server = settings.Server;
+            connStr.CurrentSchema = settings.Database;
             connStr.UserName = settings.User;
             connStr.Password = settings.Password;
             return connStr.ToString();

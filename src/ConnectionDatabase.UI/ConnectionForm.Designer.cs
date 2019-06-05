@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConnectionForm));
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.tabPageConnDatabase = new MetroFramework.Controls.MetroTabPage();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.cbServerType = new MetroFramework.Controls.MetroComboBox();
             this.btnConTest = new MetroFramework.Controls.MetroButton();
             this.cmdOk = new MetroFramework.Controls.MetroButton();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
@@ -48,8 +50,6 @@
             this.txtPasswordSbo = new MetroFramework.Controls.MetroTextBox();
             this.txtUserSbo = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
-            this.cbServerType = new MetroFramework.Controls.MetroComboBox();
             this.metroTabControl1.SuspendLayout();
             this.tabPageConnDatabase.SuspendLayout();
             this.tabPageConnSbo.SuspendLayout();
@@ -94,6 +94,25 @@
             this.tabPageConnDatabase.VerticalScrollbarBarColor = true;
             this.tabPageConnDatabase.VerticalScrollbarHighlightOnWheel = false;
             this.tabPageConnDatabase.VerticalScrollbarSize = 10;
+            // 
+            // metroLabel7
+            // 
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.Location = new System.Drawing.Point(11, 115);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(108, 19);
+            this.metroLabel7.TabIndex = 18;
+            this.metroLabel7.Text = "Tipo de Servidor";
+            // 
+            // cbServerType
+            // 
+            this.cbServerType.FormattingEnabled = true;
+            this.cbServerType.ItemHeight = 23;
+            this.cbServerType.Location = new System.Drawing.Point(11, 137);
+            this.cbServerType.Name = "cbServerType";
+            this.cbServerType.Size = new System.Drawing.Size(230, 29);
+            this.cbServerType.TabIndex = 17;
+            this.cbServerType.UseSelectable = true;
             // 
             // btnConTest
             // 
@@ -303,7 +322,7 @@
             // 
             this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnOk.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnOk.Location = new System.Drawing.Point(20, 187);
+            this.btnOk.Location = new System.Drawing.Point(11, 193);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
             this.btnOk.TabIndex = 11;
@@ -315,7 +334,7 @@
             // 
             this.btnConnTestSbo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConnTestSbo.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnConnTestSbo.Location = new System.Drawing.Point(348, 187);
+            this.btnConnTestSbo.Location = new System.Drawing.Point(339, 193);
             this.btnConnTestSbo.Name = "btnConnTestSbo";
             this.btnConnTestSbo.Size = new System.Drawing.Size(138, 23);
             this.btnConnTestSbo.TabIndex = 9;
@@ -402,25 +421,6 @@
             this.metroLabel6.Size = new System.Drawing.Size(53, 19);
             this.metroLabel6.TabIndex = 9;
             this.metroLabel6.Text = "Usuário";
-            // 
-            // metroLabel7
-            // 
-            this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(11, 115);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(108, 19);
-            this.metroLabel7.TabIndex = 18;
-            this.metroLabel7.Text = "Tipo de Servidor";
-            // 
-            // cbServerType
-            // 
-            this.cbServerType.FormattingEnabled = true;
-            this.cbServerType.ItemHeight = 23;
-            this.cbServerType.Location = new System.Drawing.Point(11, 137);
-            this.cbServerType.Name = "cbServerType";
-            this.cbServerType.Size = new System.Drawing.Size(230, 29);
-            this.cbServerType.TabIndex = 17;
-            this.cbServerType.UseSelectable = true;
             // 
             // ConnectionForm
             // 
