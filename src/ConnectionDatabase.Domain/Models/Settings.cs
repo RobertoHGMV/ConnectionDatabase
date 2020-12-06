@@ -45,10 +45,13 @@ namespace ConnectionDatabase.Domain.Models
 
         private void Validate()
         {
+            if (EServerType.None.Equals(ServerTypeSboEnum))
+                throw new Exception("Tipo de servidor não informado");
+
             if (string.IsNullOrEmpty(Server))
                 throw new Exception("Servidor não informado");
 
-            if (string.IsNullOrEmpty(Database))
+            if (string.IsNullOrEmpty(Database) && !EServerType.Hana.Equals(ServerTypeSboEnum))
                 throw new Exception("Banco de dados não informado");
 
             if (string.IsNullOrEmpty(User))
@@ -56,9 +59,6 @@ namespace ConnectionDatabase.Domain.Models
 
             if (string.IsNullOrEmpty(Password))
                 throw new Exception("Senha não informada");
-
-            if (EServerType.None.Equals(ServerTypeSboEnum))
-                throw new Exception("Tipo de servidor não informado");
         }
 
         private void ValidateSbo()

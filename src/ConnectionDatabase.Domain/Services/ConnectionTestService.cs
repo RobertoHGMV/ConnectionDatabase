@@ -1,8 +1,9 @@
 ﻿using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using ConnectionDatabase.Domain.Enums;
+using ConnectionDatabase.Domain.Helpers;
 using ConnectionDatabase.Domain.Models;
-using Sap.Data.Hana;
 using SAPbobsCOM;
 
 namespace ConnectionDatabase.Domain.Services
@@ -41,13 +42,15 @@ namespace ConnectionDatabase.Domain.Services
         {
             bool connected;
 
-            using (var conn = new HanaConnection())
+            using (var conn = DbProviderFactories.GetFactory("Sap.Data.Hana").CreateConnection())
             {
                 conn.ConnectionString = GetConnStringHana(settings);
                 conn.Open();
                 connected = ConnectionState.Open.Equals(conn.State);
                 conn.Close();
             }
+
+            //using (var conn = new HanaConnection())
 
             return connected;
         }
@@ -85,6 +88,7 @@ namespace ConnectionDatabase.Domain.Services
             connStr.UserID = settings.User;
             connStr.Password = settings.Password;
             return connStr.ToString();
+
             //return $"Data Source={settings.Server};" +
             //       $"Initial Catalog={settings.Database};" +
             //       $"User id={settings.User};" +
@@ -93,13 +97,22 @@ namespace ConnectionDatabase.Domain.Services
 
         private string GetConnStringHana(Settings settings)
         {
-            var connStr = new HanaConnectionStringBuilder();
-            connStr.Server = settings.Server;
-            connStr.CurrentSchema = settings.Database;
-            connStr.UserName = settings.User;
-            connStr.Password = settings.Password;
-            return connStr.ToString();
+            var server = $"{ ConnectionHelper.SubStringUntilTheEnd(settings.Server, "@").Replace("@", string.Empty) }";
+            var database = settings.Server.Contains("@")
+                ? $"Database={ConnectionHelper.SubStringStartUntil(settings.Database, "@").Replace("@", string.Empty)}"
+                : string.Empty;
 
+            return $"Server={server};" +
+                   $"UserName={settings.User};" +
+                   $"Password={settings.Password};" +
+                   database;
+
+            //var connStr = new HanaConnectionStringBuilder();
+            //connStr.Server = settings.Server;
+            //connStr.CurrentSchema = settings.Database;
+            //connStr.UserName = settings.User;
+            //connStr.Password = settings.Password;
+            //return connStr.ToString();
             //@"Server=hanab1:30015;Initial Catalog=SBODEMOBR;databaseName=NDB;UserID=system;Password=Ramo2278";
         }
 
