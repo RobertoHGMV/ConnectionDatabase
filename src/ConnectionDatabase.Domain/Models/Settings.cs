@@ -16,7 +16,7 @@ namespace ConnectionDatabase.Domain.Models
             Validate();
         }
 
-        public Settings(string server, string database, string user, string password, string userSbo, string passwordSbo, int serverTypeSbo)
+        public Settings(string server, string database, string user, string password, string userSbo, string passwordSbo, int serverTypeSbo, string companyDb)
         {
             Server = server;
             Database = database;
@@ -24,6 +24,7 @@ namespace ConnectionDatabase.Domain.Models
             Password = password;
             UserSbo = userSbo;
             PasswordSbo = passwordSbo;
+            CompanyDb = companyDb;
             ServerTypeSbo = serverTypeSbo;
 
             Validate();
@@ -36,6 +37,7 @@ namespace ConnectionDatabase.Domain.Models
         public string Password { get; }
         public string UserSbo { get; }
         public string PasswordSbo { get; }
+        public string CompanyDb { get; set; }
         public int ServerTypeSbo { get; private set; }
         public EServerType ServerTypeSboEnum
         {
@@ -68,6 +70,9 @@ namespace ConnectionDatabase.Domain.Models
 
             if (string.IsNullOrEmpty(PasswordSbo))
                 throw new Exception("Senha SAP não informada");
+
+            if (string.IsNullOrEmpty(CompanyDb))
+                throw new Exception("Empresa não informada");
         }
     }
 }

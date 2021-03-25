@@ -44,12 +44,15 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.txtServer = new MetroFramework.Controls.MetroTextBox();
             this.tabPageConnSbo = new MetroFramework.Controls.MetroTabPage();
+            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
+            this.txtCompanyDb = new MetroFramework.Controls.MetroTextBox();
             this.btnOk = new MetroFramework.Controls.MetroButton();
             this.btnConnTestSbo = new MetroFramework.Controls.MetroButton();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.txtPasswordSbo = new MetroFramework.Controls.MetroTextBox();
             this.txtUserSbo = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.chkIsCcc = new MetroFramework.Controls.MetroCheckBox();
             this.metroTabControl1.SuspendLayout();
             this.tabPageConnDatabase.SuspendLayout();
             this.tabPageConnSbo.SuspendLayout();
@@ -71,6 +74,7 @@
             // 
             // tabPageConnDatabase
             // 
+            this.tabPageConnDatabase.Controls.Add(this.chkIsCcc);
             this.tabPageConnDatabase.Controls.Add(this.metroLabel7);
             this.tabPageConnDatabase.Controls.Add(this.cbServerType);
             this.tabPageConnDatabase.Controls.Add(this.btnConTest);
@@ -300,6 +304,8 @@
             // 
             // tabPageConnSbo
             // 
+            this.tabPageConnSbo.Controls.Add(this.metroLabel8);
+            this.tabPageConnSbo.Controls.Add(this.txtCompanyDb);
             this.tabPageConnSbo.Controls.Add(this.btnOk);
             this.tabPageConnSbo.Controls.Add(this.btnConnTestSbo);
             this.tabPageConnSbo.Controls.Add(this.metroLabel5);
@@ -318,6 +324,47 @@
             this.tabPageConnSbo.VerticalScrollbarHighlightOnWheel = false;
             this.tabPageConnSbo.VerticalScrollbarSize = 10;
             // 
+            // metroLabel8
+            // 
+            this.metroLabel8.AutoSize = true;
+            this.metroLabel8.Location = new System.Drawing.Point(11, 13);
+            this.metroLabel8.Name = "metroLabel8";
+            this.metroLabel8.Size = new System.Drawing.Size(60, 19);
+            this.metroLabel8.TabIndex = 14;
+            this.metroLabel8.Text = "Empresa";
+            // 
+            // txtCompanyDb
+            // 
+            this.txtCompanyDb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            // 
+            // 
+            this.txtCompanyDb.CustomButton.Image = null;
+            this.txtCompanyDb.CustomButton.Location = new System.Drawing.Point(208, 1);
+            this.txtCompanyDb.CustomButton.Name = "";
+            this.txtCompanyDb.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtCompanyDb.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtCompanyDb.CustomButton.TabIndex = 1;
+            this.txtCompanyDb.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtCompanyDb.CustomButton.UseSelectable = true;
+            this.txtCompanyDb.CustomButton.Visible = false;
+            this.txtCompanyDb.Lines = new string[0];
+            this.txtCompanyDb.Location = new System.Drawing.Point(11, 35);
+            this.txtCompanyDb.MaxLength = 32767;
+            this.txtCompanyDb.Name = "txtCompanyDb";
+            this.txtCompanyDb.PasswordChar = '\0';
+            this.txtCompanyDb.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtCompanyDb.SelectedText = "";
+            this.txtCompanyDb.SelectionLength = 0;
+            this.txtCompanyDb.SelectionStart = 0;
+            this.txtCompanyDb.ShortcutsEnabled = true;
+            this.txtCompanyDb.Size = new System.Drawing.Size(230, 23);
+            this.txtCompanyDb.TabIndex = 8;
+            this.txtCompanyDb.UseSelectable = true;
+            this.txtCompanyDb.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtCompanyDb.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
             // btnOk
             // 
             this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -325,7 +372,7 @@
             this.btnOk.Location = new System.Drawing.Point(11, 193);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
-            this.btnOk.TabIndex = 11;
+            this.btnOk.TabIndex = 12;
             this.btnOk.Text = "OK";
             this.btnOk.UseSelectable = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
@@ -337,7 +384,7 @@
             this.btnConnTestSbo.Location = new System.Drawing.Point(339, 193);
             this.btnConnTestSbo.Name = "btnConnTestSbo";
             this.btnConnTestSbo.Size = new System.Drawing.Size(138, 23);
-            this.btnConnTestSbo.TabIndex = 10;
+            this.btnConnTestSbo.TabIndex = 11;
             this.btnConnTestSbo.Text = "Testar Conexão";
             this.btnConnTestSbo.UseSelectable = true;
             this.btnConnTestSbo.Click += new System.EventHandler(this.btnConnTestSbo_Click);
@@ -345,7 +392,7 @@
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(247, 13);
+            this.metroLabel5.Location = new System.Drawing.Point(247, 64);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(44, 19);
             this.metroLabel5.TabIndex = 12;
@@ -368,7 +415,7 @@
             this.txtPasswordSbo.CustomButton.UseSelectable = true;
             this.txtPasswordSbo.CustomButton.Visible = false;
             this.txtPasswordSbo.Lines = new string[0];
-            this.txtPasswordSbo.Location = new System.Drawing.Point(247, 35);
+            this.txtPasswordSbo.Location = new System.Drawing.Point(247, 86);
             this.txtPasswordSbo.MaxLength = 32767;
             this.txtPasswordSbo.Name = "txtPasswordSbo";
             this.txtPasswordSbo.PasswordChar = '*';
@@ -378,7 +425,7 @@
             this.txtPasswordSbo.SelectionStart = 0;
             this.txtPasswordSbo.ShortcutsEnabled = true;
             this.txtPasswordSbo.Size = new System.Drawing.Size(230, 23);
-            this.txtPasswordSbo.TabIndex = 9;
+            this.txtPasswordSbo.TabIndex = 10;
             this.txtPasswordSbo.UseSelectable = true;
             this.txtPasswordSbo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPasswordSbo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -398,7 +445,7 @@
             this.txtUserSbo.CustomButton.UseSelectable = true;
             this.txtUserSbo.CustomButton.Visible = false;
             this.txtUserSbo.Lines = new string[0];
-            this.txtUserSbo.Location = new System.Drawing.Point(11, 35);
+            this.txtUserSbo.Location = new System.Drawing.Point(247, 35);
             this.txtUserSbo.MaxLength = 32767;
             this.txtUserSbo.Name = "txtUserSbo";
             this.txtUserSbo.PasswordChar = '\0';
@@ -408,7 +455,7 @@
             this.txtUserSbo.SelectionStart = 0;
             this.txtUserSbo.ShortcutsEnabled = true;
             this.txtUserSbo.Size = new System.Drawing.Size(230, 23);
-            this.txtUserSbo.TabIndex = 8;
+            this.txtUserSbo.TabIndex = 9;
             this.txtUserSbo.UseSelectable = true;
             this.txtUserSbo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtUserSbo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -416,11 +463,21 @@
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(11, 13);
+            this.metroLabel6.Location = new System.Drawing.Point(247, 13);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(53, 19);
             this.metroLabel6.TabIndex = 9;
             this.metroLabel6.Text = "Usuário";
+            // 
+            // chkIsCcc
+            // 
+            this.chkIsCcc.AutoSize = true;
+            this.chkIsCcc.Location = new System.Drawing.Point(248, 137);
+            this.chkIsCcc.Name = "chkIsCcc";
+            this.chkIsCcc.Size = new System.Drawing.Size(102, 15);
+            this.chkIsCcc.TabIndex = 19;
+            this.chkIsCcc.Text = "Ambiente CCC";
+            this.chkIsCcc.UseSelectable = true;
             // 
             // ConnectionForm
             // 
@@ -463,6 +520,9 @@
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroComboBox cbServerType;
+        private MetroFramework.Controls.MetroLabel metroLabel8;
+        private MetroFramework.Controls.MetroTextBox txtCompanyDb;
+        private MetroFramework.Controls.MetroCheckBox chkIsCcc;
     }
 }
 

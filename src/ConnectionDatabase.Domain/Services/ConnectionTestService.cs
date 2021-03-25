@@ -61,7 +61,7 @@ namespace ConnectionDatabase.Domain.Services
             Company company = new Company();
 
             company.Server = settings.Server;
-            company.CompanyDB = settings.Database;
+            company.CompanyDB = settings.CompanyDb;
             company.DbUserName = settings.User;
             company.DbPassword = settings.Password;
             company.DbServerType = (BoDataServerTypes)settings.ServerTypeSbo;

@@ -15,7 +15,38 @@ namespace ConnectionDatabase.UI
             InitializeComponent();
             _connectionService = connectionTestService;
             FormatServerType();
+            SetEvents();
         }
+
+        #region Events
+
+        private void SetEvents()
+        {
+            chkIsCcc.CheckedChanged += ChkIsCcc_CheckedChanged;
+        }
+
+        private void ChkIsCcc_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (chkIsCcc.Checked)
+                {
+                    txtDatabase.Enabled = false;
+                    txtDatabase.Text = "NDB";
+                }
+                else
+                {
+                    txtDatabase.Enabled = true;
+                    txtDatabase.Text = string.Empty;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageError(ex.Message);
+            }
+        }
+
+        #endregion
 
         #region Messages
 
@@ -69,7 +100,8 @@ namespace ConnectionDatabase.UI
                 txtPassword.Text,
                 txtUserSbo.Text,
                 txtPasswordSbo.Text,
-                serverType);
+                serverType,
+                txtCompanyDb.Text);
         }
 
         private bool StartTest()
